@@ -1,6 +1,6 @@
 const element = document.querySelector('#cute');
 document.addEventListener('keydown', move);
-document.addEventListener('click', randmove)
+element.addEventListener('click', randmove)
 
 // initial position
 let x = 0,
@@ -40,8 +40,8 @@ let w = window.innerWidth,
 function randmove() {
 
     //generate random posivie or negative number 
-    xdis = (Math.random() - Math.random()) * w / 2,
-        ydis = (Math.random() - Math.random()) * h / 2;
+    xdis = (Math.random() - Math.random()) * w / 4,
+        ydis = (Math.random() - Math.random()) * h / 4;
     element.style.transform = `translate(${xdis}px,${ydis}px)`;
     // save position for keydown event
     x = xdis
