@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(75, 255, 255);
+    overflow-x: hidden
+}
+
+#cloud {
+    position: absolute;
+    right: 95%;
+    top: 20%;
+    animation: cloudmove 8s linear infinite;
+    /* z-index: -1; */
+
+}
+
+@keyframes cloudmove {
+    0% {
+        right: 95%
+    }
+
+    100% {
+        right: -40%;
+    }
+}
