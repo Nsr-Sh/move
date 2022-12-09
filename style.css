@@ -1,6 +1,6 @@
 body {
     background-color: rgb(75, 255, 255);
-    overflow-x: hidden
+    overflow: hidden
 }
 
 #cloud {
@@ -8,8 +8,13 @@ body {
     right: 95%;
     top: 20%;
     animation: cloudmove 8s linear infinite;
-    /* z-index: -1; */
+    z-index: -1;
 
+}
+
+/* top on element! */
+#cloud.up {
+    z-index: 99;
 }
 
 @keyframes cloudmove {
@@ -20,4 +25,21 @@ body {
     100% {
         right: -40%;
     }
+}
+
+#cute {
+    display: inline-block;
+}
+
+input {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(90deg, rgb(248, 143, 63) 0%, rgb(150, 62, 7) 100%);
 }
