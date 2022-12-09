@@ -9,7 +9,7 @@ let xdis, ydis;
 // displacement rate
 let dis = 20;
 
-
+// keydown function
 function move(e) {
     // console.log(e.key);
     if (e.key == 'ArrowRight') {
@@ -37,6 +37,7 @@ function move(e) {
 let w = window.innerWidth,
     h = window.innerHeight;
 
+// click function
 function randmove() {
 
     //generate random posivie or negative number 

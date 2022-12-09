@@ -1,6 +1,5 @@
 body {
     background-color: rgb(75, 255, 255);
-    overflow-x: hidden
 }
 
 #cloud {
@@ -18,6 +17,10 @@ body {
     }
 
     100% {
-        right: -40%;
+        right: -20px;
     }
+}
+
+#cute {
+    display: inline-block;
 }
