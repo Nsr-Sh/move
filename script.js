@@ -1,17 +1,29 @@
+// select elements
 const element = document.querySelector('#cute');
-document.addEventListener('keydown', move);
-element.addEventListener('click', randmove)
+const btn = document.querySelector('input')
 
-// initial position
+// initial position 
 let x = 0,
     y = 0;
 let xdis, ydis;
-// displacement rate
+
+// displacement rate for keydown event
 let dis = 20;
 
-// keydown function
+// get viweport dimension for click event
+let w = window.innerWidth,
+    h = window.innerHeight;
+
+// -------------------------------------
+// events:
+document.addEventListener('keydown', move);
+element.addEventListener('click', randmove);
+btn.addEventListener('click', comeback);
+
+// function for keydown event
 function move(e) {
-    // console.log(e.key);
+    console.log('keydown');
+    console.log(x, y);
     if (e.key == 'ArrowRight') {
         x += dis;
         element.style.transform = `translate(${x}px,${y}px)`;
@@ -33,18 +45,25 @@ function move(e) {
 
 // ----------
 
-// get viweport dimension
-let w = window.innerWidth,
-    h = window.innerHeight;
-
-// click function
+// function for click event
 function randmove() {
 
     //generate random posivie or negative number 
-    xdis = (Math.random() - Math.random()) * w / 4,
-        ydis = (Math.random() - Math.random()) * h / 4;
+    xdis = (Math.random() - Math.random()) * w / 3,
+        ydis = (Math.random() - Math.random()) * h / 3;
     element.style.transform = `translate(${xdis}px,${ydis}px)`;
     // save position for keydown event
-    x = xdis
-    y = ydis
+    x = xdis;
+    y = ydis;
+}
+
+// ------------
+// function for click(btn) (come back to viewport) 
+function comeback() {
+    // centering element
+    let xmid = w / 2 - element.clientWidth / 2;
+    let ymid = h / 2 - element.clientHeight / 2;
+    element.style.transform = `translate(${xmid}px,${ymid}px)`;
+    x = xmid;
+    y = ymid;
 }
